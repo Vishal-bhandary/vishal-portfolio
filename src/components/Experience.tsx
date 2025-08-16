@@ -355,8 +355,6 @@ const ParticleCanvas = ({ currentShape }: { currentShape: ShapeType }) => {
       // Handle shape transition
       if (transitionProgressRef.current < 1) {
         transitionProgressRef.current += 1 / transitionDurationRef.current;
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
-        const progress = Math.min(transitionProgressRef.current, 1);
         
         if (targetPositionsRef.current) {
           for (let i = 0; i < numPoints; i++) {

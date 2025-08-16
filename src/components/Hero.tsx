@@ -1,6 +1,5 @@
 import { useState, useEffect, useRef, type JSX } from 'react';
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-import { motion, useScroll, useTransform, useSpring, AnimatePresence, type Variants } from 'framer-motion';
+import { motion, AnimatePresence, type Variants } from 'framer-motion';
 
 // Mock profile image - you can replace this with your actual image
 import profilePic from "../assets/profile.jpeg"; // Add your profile picture in src/assets
@@ -162,10 +161,10 @@ export default function InteractiveHero() {
       opacity: 1,
       y: 0,
       scale: 1,
-      transition: { 
-        duration: 0.8, 
+      transition: {
+        duration: 0.8,
         ease: [0.6, -0.05, 0.01, 0.99],
-        type: "spring" as const,
+        type: "spring",
         stiffness: 100
       },
     },
@@ -180,7 +179,7 @@ export default function InteractiveHero() {
   return (
     <section 
       ref={containerRef}
-      className="relative overflow-hidden bg-gray-950 text-white py-16 lg:py-24" // Adjusted height and padding
+      className="relative overflow-hidden bg-gray-950 text-white py-16 lg:py-24"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
@@ -266,7 +265,7 @@ export default function InteractiveHero() {
         />
       ))}
 
-      <div className="relative z-10 w-full px-6 lg:px-12 min-h-[90vh] grid grid-cols-1 lg:grid-cols-2 place-items-center gap-16"> {/* Adjusted min-h-screen to min-h-[90vh] */}
+      <div className="relative z-10 w-full px-6 lg:px-12 min-h-[90vh] grid grid-cols-1 lg:grid-cols-2 place-items-center gap-16">
         {/* Left Content */}
         <motion.div
           className="flex-1 max-w-3xl text-center lg:text-left pt-20 lg:pt-0"
